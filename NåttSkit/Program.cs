@@ -1,49 +1,49 @@
 ﻿﻿
 Console.WriteLine("Djurslakt!");
 
-Djur myDjur = new Djur();
+Djur mittDjur = new Djur();
 
 Console.WriteLine("Välj ett namn till ditt djur!");
-myDjur.name = Console.ReadLine();
+mittDjur.name = Console.ReadLine();
 
-Console.WriteLine($"Great! {myDjur.name} is a beautiful name!");
-Console.WriteLine("Press any key to continue");
+Console.WriteLine($"Vadå {mittDjur.name}? Sämsta namnet jag läst!");
+Console.WriteLine("Valfri knapp för att fortsätta");
 Console.ReadKey();
 
-while (myDjur.GetAlive() == true)
+while (mittDjur.GetAlive() == true)
 {
   Console.Clear();
-  myDjur.PrintStats();
-  Console.WriteLine("Now what do you want to do?");
-  Console.WriteLine($"1. Teach {myDjur.name} a new word");
-  Console.WriteLine($"2. Talk to {myDjur.name}");
-  Console.WriteLine($"3. Feed {myDjur.name}");
-  Console.WriteLine($"4. Do nothing");
+  mittDjur.PrintStats();
+  Console.WriteLine("Vad vill du göra?");
+  Console.WriteLine($"1. Lära {mittDjur.name} nytt ord");
+  Console.WriteLine($"2. Snacka {mittDjur.name}");
+  Console.WriteLine($"3. Mata {mittDjur.name}");
+  Console.WriteLine($"4. Gör inget");
 
-  string doWhat = Console.ReadLine();
-  if (doWhat == "1")
+  string görVad = Console.ReadLine();
+  if (görVad == "1")
   {
-    Console.WriteLine("What word?");
-    string word = Console.ReadLine();
-    myDjur.Teach(word);
+    Console.WriteLine("Vilket ord?");
+    string ord = Console.ReadLine();
+    mittDjur.Lär(ord);
   }
-  if (doWhat == "2")
+  if (görVad == "2")
   {
-    myDjur.Hi();
+    mittDjur.Tja();
   }
-  if (doWhat == "3")
+  if (görVad == "3")
   {
-    myDjur.Feed();
+    mittDjur.Mata();
   }
   else
   {
-    Console.WriteLine("Doing nothing...");
+    Console.WriteLine("Gör inget");
   }
-  myDjur.Tick();
-  Console.WriteLine("Press Enter to continue");
+  mittDjur.Tick();
+  Console.WriteLine("Tryck ENTER för att fortsätta");
   Console.ReadLine();
 }
 
-Console.WriteLine($"OH NO! {myDjur.name} is dead!");
-Console.WriteLine("Press ENTER to quit");
+Console.WriteLine($"Haha! {mittDjur.name} dog!");
+Console.WriteLine("Tryck ENTER för att avsluta");
 Console.ReadLine();

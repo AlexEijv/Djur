@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-public class Djuret
+public class Djur
 {
   private int hunger;
   private int boredom;
@@ -9,12 +9,12 @@ public class Djuret
   private bool isAlive;
   public string name;
 
-  public Djuret()
+  public Djur()
   {
     isAlive = true;
   }
 
-  public void Feed()
+  public void Mata()
   {
     Console.WriteLine($" [{name}] Dammar och blir mätt");
     hunger -= 2;
@@ -24,14 +24,14 @@ public class Djuret
     }
   }
 
-  public void Hi()
+  public void Tja()
   {
     int wordNum = Random.Shared.Next(words.Count);
     Console.WriteLine($" [{name}] säger: {words[wordNum]}");
     ReduceBoredom();
   }
 
-  public void Teach(string word)
+  public void Lär(string word)
   {
     Console.WriteLine($" [{name}] lärde sig: {word}");
     words.Add(word);
@@ -50,7 +50,7 @@ public class Djuret
 
   public void PrintStats()
   {
-    Console.WriteLine($"Name: {name} || Hunger: {hunger} || Boredom: {boredom} || Vocabulary: {words.Count} words");
+    Console.WriteLine($"Namn: {name} || Hunger: {hunger} || Utråkad: {boredom} || Ordföråd: {words.Count} ord");
   }
 
   public bool GetAlive()
